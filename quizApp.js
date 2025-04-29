@@ -51,10 +51,21 @@ class QuizApp {
      */
     startQuiz() {
         const language = this.elements.quizLanguage.value;
+        // デバッグ情報を出力
+        console.log('Selected language:', language);
+        console.log('Available quiz data:', {
+            chinese: !!window.chineseQuizData,
+            korean: !!window.koreanQuizData,
+            english: !!window.englishQuizData,
+            spanish: !!window.spanishQuizData,
+            vietnamese: !!window.vietnameseQuizData
+        });
+        
         // 言語に応じたクイズデータを取得
         const fullQuizData = this.getQuizData(language);
         if (!fullQuizData) {
             console.error('Quiz data not found for language:', language);
+            alert('申し訳ありませんが、選択された言語のクイズデータが見つかりませんでした。');
             return;
         }
 
