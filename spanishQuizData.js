@@ -1,73 +1,51 @@
 // スペイン語クイズのデータ
 window.spanishQuizData = [
-  {
-    question: "Hola",
-    pronunciation: "オラ",
-    options: ["こんにちは", "さようなら", "ありがとう"],
-    correct: 0,
-    explanation: "「Hola」は「こんにちは」という意味です。"
-  },
-  {
-    question: "Adiós",
-    pronunciation: "アディオス",
-    options: ["こんにちは", "さようなら", "ごめんなさい"],
-    correct: 1,
-    explanation: "「Adiós」は「さようなら」という意味です。"
-  },
-  {
-    question: "Gracias",
-    pronunciation: "グラシアス",
-    options: ["ありがとう", "ごめんなさい", "こんばんは"],
-    correct: 0,
-    explanation: "「Gracias」は「ありがとう」という意味です。"
-  },
-  {
-    question: "Por favor",
-    pronunciation: "ポル ファボール",
-    options: ["すみません", "お願いします", "おやすみなさい"],
-    correct: 1,
-    explanation: "「Por favor」は「お願いします」という意味です。"
-  },
-  {
-    question: "Buenos días",
-    pronunciation: "ブエノス ディアス",
-    options: ["おやすみなさい", "こんにちは", "おはようございます"],
-    correct: 2,
-    explanation: "「Buenos días」は「おはようございます」という意味です。"
-  },
-  {
-    question: "Buenas noches",
-    pronunciation: "ブエナス ノーチェス",
-    options: ["おはようございます", "こんばんは", "おやすみなさい"],
-    correct: 1,
-    explanation: "「Buenas noches」は「こんばんは」という意味です。"
-  },
-  {
-    question: "Mucho gusto",
-    pronunciation: "ムーチョ グスト",
-    options: ["はじめまして", "ごめんなさい", "また会いましょう"],
-    correct: 0,
-    explanation: "「Mucho gusto」は「はじめまして」（直訳：とても嬉しいです）という意味です。"
-  },
-  {
-    question: "¿Cómo estás?",
-    pronunciation: "コモ エスタス",
-    options: ["お元気ですか？", "お名前は？", "何歳ですか？"],
-    correct: 0,
-    explanation: "「¿Cómo estás?」は「お元気ですか？」（直訳：どうですか？）という意味です。"
-  },
-  {
-    question: "Lo siento",
-    pronunciation: "ロ シエント",
-    options: ["ありがとう", "ごめんなさい", "さようなら"],
-    correct: 1,
-    explanation: "「Lo siento」は「ごめんなさい」（直訳：それを感じます）という意味です。"
-  },
-  {
-    question: "De nada",
-    pronunciation: "デ ナダ",
-    options: ["どういたしまして", "こんにちは", "さようなら"],
-    correct: 0,
-    explanation: "「De nada」は「どういたしまして」（直訳：何でもありません）という意味です。"
-  }
+  { question: "Hola", pronunciation: "オラ", options: ["こんにちは", "さようなら", "ありがとう"], correct: 0, explanation: "「Hola」は「こんにちは」という意味です。" },
+  { question: "Adiós", pronunciation: "アディオス", options: ["こんにちは", "さようなら", "ごめんなさい"], correct: 1, explanation: "「Adiós」は「さようなら」という意味です。" },
+  { question: "Gracias", pronunciation: "グラシアス", options: ["ありがとう", "すみません", "こんばんは"], correct: 0, explanation: "「Gracias」は「ありがとう」という意味です。" },
+  { question: "Por favor", pronunciation: "ポル ファボール", options: ["おはよう", "お願いします", "おやすみなさい"], correct: 1, explanation: "「Por favor」は「お願いします」という意味です。" },
+  { question: "Buenos días", pronunciation: "ブエノス ディアス", options: ["おやすみ", "おはよう", "こんばんは"], correct: 1, explanation: "「Buenos días」は「おはようございます」という意味です。" },
+  { question: "Buenas noches", pronunciation: "ブエナス ノチェス", options: ["おやすみなさい", "こんにちは", "こんばんは"], correct: 0, explanation: "「Buenas noches」は「おやすみなさい」という意味です。" },
+  { question: "Buenas tardes", pronunciation: "ブエナス タルデス", options: ["おはよう", "こんにちは", "さようなら"], correct: 1, explanation: "「Buenas tardes」は「こんにちは（午後）」という意味です。" },
+  { question: "Lo siento", pronunciation: "ロ シエント", options: ["すみません", "お願いします", "ありがとう"], correct: 0, explanation: "「Lo siento」は「すみません」という意味です。" },
+  { question: "Sí", pronunciation: "シ", options: ["いいえ", "はい", "たぶん"], correct: 1, explanation: "「Sí」は「はい」という意味です。" },
+  { question: "No", pronunciation: "ノ", options: ["はい", "いいえ", "多分"], correct: 1, explanation: "「No」は「いいえ」という意味です。" },
+  { question: "¿Cómo estás?", pronunciation: "コモ エスタス", options: ["元気ですか？", "何歳ですか？", "どこに住んでいますか？"], correct: 0, explanation: "「¿Cómo estás?」は「元気ですか？」という意味です。" },
+  { question: "Bien", pronunciation: "ビエン", options: ["悪い", "良い", "忙しい"], correct: 1, explanation: "「Bien」は「良い」という意味です。" },
+  { question: "Mal", pronunciation: "マル", options: ["悪い", "良い", "普通"], correct: 0, explanation: "「Mal」は「悪い」という意味です。" },
+  { question: "¿Qué tal?", pronunciation: "ケ タル", options: ["元気？", "どこ？", "何？"], correct: 0, explanation: "「¿Qué tal?」は「元気？」というカジュアルな挨拶です。" },
+  { question: "Perdón", pronunciation: "ペルドン", options: ["ありがとう", "ごめんなさい", "こんばんは"], correct: 1, explanation: "「Perdón」は「ごめんなさい」という意味です。" },
+  { question: "Amigo", pronunciation: "アミーゴ", options: ["友達", "家族", "先生"], correct: 0, explanation: "「Amigo」は「友達」という意味です。" },
+  { question: "Familia", pronunciation: "ファミリア", options: ["家族", "先生", "友達"], correct: 0, explanation: "「Familia」は「家族」という意味です。" },
+  { question: "Casa", pronunciation: "カサ", options: ["学校", "家", "病院"], correct: 1, explanation: "「Casa」は「家」という意味です。" },
+  { question: "Escuela", pronunciation: "エスクエラ", options: ["会社", "学校", "病院"], correct: 1, explanation: "「Escuela」は「学校」という意味です。" },
+  { question: "Comida", pronunciation: "コミーダ", options: ["食べ物", "飲み物", "デザート"], correct: 0, explanation: "「Comida」は「食べ物」という意味です。" },
+  { question: "Agua", pronunciation: "アグア", options: ["お茶", "水", "ジュース"], correct: 1, explanation: "「Agua」は「水」という意味です。" },
+  { question: "Pan", pronunciation: "パン", options: ["パン", "米", "肉"], correct: 0, explanation: "「Pan」は「パン」という意味です。" },
+  { question: "Carne", pronunciation: "カルネ", options: ["魚", "肉", "野菜"], correct: 1, explanation: "「Carne」は「肉」という意味です。" },
+  { question: "Pescado", pronunciation: "ペスカド", options: ["肉", "魚", "卵"], correct: 1, explanation: "「Pescado」は「魚」という意味です。" },
+  { question: "Fruta", pronunciation: "フルータ", options: ["肉", "野菜", "果物"], correct: 2, explanation: "「Fruta」は「果物」という意味です。" },
+  { question: "Verdura", pronunciation: "ベルドゥーラ", options: ["野菜", "果物", "パン"], correct: 0, explanation: "「Verdura」は「野菜」という意味です。" },
+  { question: "Leche", pronunciation: "レチェ", options: ["水", "牛乳", "ジュース"], correct: 1, explanation: "「Leche」は「牛乳」という意味です。" },
+  { question: "Café", pronunciation: "カフェ", options: ["お茶", "コーヒー", "水"], correct: 1, explanation: "「Café」は「コーヒー」という意味です。" },
+  { question: "Té", pronunciation: "テ", options: ["コーヒー", "水", "お茶"], correct: 2, explanation: "「Té」は「お茶」という意味です。" },
+  { question: "Zapato", pronunciation: "サパト", options: ["靴", "服", "帽子"], correct: 0, explanation: "「Zapato」は「靴」という意味です。" },
+  { question: "Ropa", pronunciation: "ロパ", options: ["服", "帽子", "靴"], correct: 0, explanation: "「Ropa」は「服」という意味です。" },
+  { question: "Sombrero", pronunciation: "ソンブレロ", options: ["帽子", "靴", "シャツ"], correct: 0, explanation: "「Sombrero」は「帽子」という意味です。" },
+  { question: "Libro", pronunciation: "リブロ", options: ["ノート", "本", "ペン"], correct: 1, explanation: "「Libro」は「本」という意味です。" },
+  { question: "Pluma", pronunciation: "プルマ", options: ["ノート", "ペン", "本"], correct: 1, explanation: "「Pluma」は「ペン」という意味です。" },
+  { question: "Mesa", pronunciation: "メサ", options: ["椅子", "机", "ベッド"], correct: 1, explanation: "「Mesa」は「机」という意味です。" },
+  { question: "Silla", pronunciation: "シジャ", options: ["机", "椅子", "ベッド"], correct: 1, explanation: "「Silla」は「椅子」という意味です。" },
+  { question: "Cama", pronunciation: "カマ", options: ["机", "椅子", "ベッド"], correct: 2, explanation: "「Cama」は「ベッド」という意味です。" },
+  { question: "Perro", pronunciation: "ペロ", options: ["犬", "猫", "鳥"], correct: 0, explanation: "「Perro」は「犬」という意味です。" },
+  { question: "Gato", pronunciation: "ガト", options: ["鳥", "犬", "猫"], correct: 2, explanation: "「Gato」は「猫」という意味です。" },
+  { question: "Pájaro", pronunciation: "パハロ", options: ["犬", "猫", "鳥"], correct: 2, explanation: "「Pájaro」は「鳥」という意味です。" },
+  { question: "Manzana", pronunciation: "マンサナ", options: ["バナナ", "りんご", "オレンジ"], correct: 1, explanation: "「Manzana」は「りんご」という意味です。" },
+  { question: "Naranja", pronunciation: "ナランハ", options: ["バナナ", "オレンジ", "りんご"], correct: 1, explanation: "「Naranja」は「オレンジ」という意味です。" },
+  { question: "Plátano", pronunciation: "プラタノ", options: ["バナナ", "オレンジ", "りんご"], correct: 0, explanation: "「Plátano」は「バナナ」という意味です。" },
+  { question: "Azul", pronunciation: "アスル", options: ["赤", "青", "緑"], correct: 1, explanation: "「Azul」は「青」という意味です。" },
+  { question: "Rojo", pronunciation: "ロホ", options: ["赤", "青", "黄色"], correct: 0, explanation: "「Rojo」は「赤」という意味です。" },
+  { question: "Amarillo", pronunciation: "アマリージョ", options: ["青", "黄色", "赤"], correct: 1, explanation: "「Amarillo」は「黄色」という意味です。" },
+  { question: "Negro", pronunciation: "ネグロ", options: ["白", "黒", "赤"], correct: 1, explanation: "「Negro」は「黒」という意味です。" },
+  { question: "Blanco", pronunciation: "ブランコ", options: ["黒", "白", "青"], correct: 1, explanation: "「Blanco」は「白」という意味です。" }
 ];
