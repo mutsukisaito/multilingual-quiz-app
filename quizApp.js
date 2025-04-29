@@ -51,21 +51,22 @@ class QuizApp {
      */
     startQuiz() {
         const language = this.elements.quizLanguage.value;
-        // デバッグ情報を出力
+        // デバッグ情報を詳細に出力
         console.log('Selected language:', language);
+        console.log('Vietnamese quiz data:', window.vietnameseQuizData);
         console.log('Available quiz data:', {
-            chinese: !!window.chineseQuizData,
-            korean: !!window.koreanQuizData,
-            english: !!window.englishQuizData,
-            spanish: !!window.spanishQuizData,
-            vietnamese: !!window.vietnameseQuizData
+            chinese: window.chineseQuizData?.length || 0,
+            korean: window.koreanQuizData?.length || 0,
+            english: window.englishQuizData?.length || 0,
+            spanish: window.spanishQuizData?.length || 0,
+            vietnamese: window.vietnameseQuizData?.length || 0
         });
-        
+
         // 言語に応じたクイズデータを取得
         const fullQuizData = this.getQuizData(language);
-        if (!fullQuizData) {
-            console.error('Quiz data not found for language:', language);
-            alert('申し訳ありませんが、選択された言語のクイズデータが見つかりませんでした。');
+        if (!fullQuizData || fullQuizData.length === 0) {
+            console.error('Quiz data not found or empty for language:', language);
+            this.showError('申し訳ありませんが、選択された言語のクイズデータを読み込めませんでした。');
             return;
         }
 
@@ -270,6 +271,18 @@ class QuizApp {
         elementsToReset.forEach(id => {
             document.getElementById(id).style.display = '';
         });
+    }
+
+    /**
+     * エラーメッセージの表示
+     * @param {string} message - エラーメッセージ
+     */
+    showError(message) {
+        this.elements.resultContainer.classList.remove('hidden');
+        this.elements.resultMessage.textContent = 'エラー';
+        this.elements.resultMessage.className = 'text-xl font-bold mb-2 text-center text-red-600';
+        this.elements.explanation.textContent = message;
+        this.elements.nextButton.classList.add('hidden');
     }
 }
 
