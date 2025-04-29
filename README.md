@@ -1,10 +1,10 @@
 # Multilingual Quiz Application
 
-多言語対応の3択クイズアプリケーションです。英語、中国語、韓国語の問題を提供します。
+多言語対応の3択クイズアプリケーションです。英語、中国語、韓国語、スペイン語、ベトナム語の問題を提供します。
 
 ## Features / 機能
 
-- 3つの言語（英語・中国語・韓国語）でのクイズ提供
+- 5つの言語（英語・中国語・韓国語・スペイン語・ベトナム語）でのクイズ提供
 - クイズ問題の表示
 - 3つの選択肢から回答を選択
 - 即時の正誤判定
@@ -21,11 +21,13 @@
 
 ```
 .
-├── index.html         # メインのHTMLファイル
-├── quizApp.js        # クイズアプリケーションのコアロジック
+├── index.html           # メインのHTMLファイル
+├── quizApp.js          # クイズアプリケーションのコアロジック
 ├── englishQuizData.js  # 英語クイズのデータ
 ├── chineseQuizData.js  # 中国語クイズのデータ
-└── koreanQuizData.js   # 韓国語クイズのデータ
+├── koreanQuizData.js   # 韓国語クイズのデータ
+├── spanishQuizData.js  # スペイン語クイズのデータ
+└── vietnameseQuizData.js # ベトナム語クイズのデータ
 ```
 
 ## Setup and Running / セットアップと実行方法
@@ -51,6 +53,8 @@ cd multilingual-quiz-app
 - `englishQuizData.js` - 英語の問題セット
 - `chineseQuizData.js` - 中国語の問題セット
 - `koreanQuizData.js` - 韓国語の問題セット
+- `spanishQuizData.js` - スペイン語の問題セット
+- `vietnameseQuizData.js` - ベトナム語の問題セット
 
 各クイズデータは以下の形式で構成されています：
 ```javascript
