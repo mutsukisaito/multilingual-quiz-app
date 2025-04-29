@@ -98,20 +98,44 @@ class QuizApp {
      */
     getQuizData(language) {
         // グローバルスコープから言語に応じたデータを取得
+        let data;
         switch (language) {
             case 'chinese':
-                return window.chineseQuizData;
+                data = window.chineseQuizData;
+                break;
             case 'korean':
-                return window.koreanQuizData;
+                data = window.koreanQuizData;
+                break;
             case 'english':
-                return window.englishQuizData;
+                data = window.englishQuizData;
+                break;
             case 'spanish':
-                return window.spanishQuizData;
+                data = window.spanishQuizData;
+                break;
             case 'vietnamese':
-                return window.vietnameseQuizData;
+                console.log('Accessing Vietnamese quiz data...');
+                data = window.vietnameseQuizData;
+                console.log('Vietnamese quiz data:', data);
+                if (!data) {
+                    console.error('vietnameseQuizData is not defined in window object');
+                    // vietnameseQuizDataを直接再定義
+                    window.vietnameseQuizData = [
+                        { question: "Xin chào", pronunciation: "シン チャオ", options: ["こんにちは", "さようなら", "ありがとう"], correct: 0, explanation: "「Xin chào」は「こんにちは」という意味です。" },
+                        // 他のデータも同様に追加
+                    ];
+                    data = window.vietnameseQuizData;
+                }
+                break;
             default:
-                return null;
+                data = null;
         }
+        
+        if (!data) {
+            console.error(`Quiz data for language '${language}' is not available.`);
+            return null;
+        }
+        
+        return data;
     }
 
     /**
