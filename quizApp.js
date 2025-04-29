@@ -93,6 +93,8 @@ class QuizApp {
                 return window.koreanQuizData;
             case 'english':
                 return window.englishQuizData;
+            case 'spanish':
+                return window.spanishQuizData;
             default:
                 return null;
         }
