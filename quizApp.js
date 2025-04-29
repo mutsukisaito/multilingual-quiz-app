@@ -286,7 +286,36 @@ class QuizApp {
     }
 }
 
+// クイズデータの読み込みを確認
+function checkQuizData() {
+    const quizData = {
+        chinese: window.chineseQuizData,
+        korean: window.koreanQuizData,
+        english: window.englishQuizData,
+        spanish: window.spanishQuizData,
+        vietnamese: window.vietnameseQuizData
+    };
+
+    // データの読み込み状態をチェック
+    const missingData = Object.entries(quizData)
+        .filter(([_, data]) => !data || data.length === 0)
+        .map(([lang]) => lang);
+
+    if (missingData.length > 0) {
+        console.error('Missing quiz data for languages:', missingData);
+        return false;
+    }
+    return true;
+}
+
 // アプリケーションの初期化
 document.addEventListener('DOMContentLoaded', () => {
-    new QuizApp();
+    // すべてのスクリプトが読み込まれるのを待つ
+    setTimeout(() => {
+        if (checkQuizData()) {
+            new QuizApp();
+        } else {
+            alert('クイズデータの読み込みに失敗しました。ページを更新してください。');
+        }
+    }, 1000);
 });
