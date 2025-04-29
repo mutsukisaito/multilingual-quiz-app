@@ -98,44 +98,20 @@ class QuizApp {
      */
     getQuizData(language) {
         // グローバルスコープから言語に応じたデータを取得
-        let data;
         switch (language) {
             case 'chinese':
-                data = window.chineseQuizData;
-                break;
+                return window.chineseQuizData;
             case 'korean':
-                data = window.koreanQuizData;
-                break;
+                return window.koreanQuizData;
             case 'english':
-                data = window.englishQuizData;
-                break;
+                return window.englishQuizData;
             case 'spanish':
-                data = window.spanishQuizData;
-                break;
+                return window.spanishQuizData;
             case 'vietnamese':
-                console.log('Accessing Vietnamese quiz data...');
-                data = window.vietnameseQuizData;
-                console.log('Vietnamese quiz data:', data);
-                if (!data) {
-                    console.error('vietnameseQuizData is not defined in window object');
-                    // vietnameseQuizDataを直接再定義
-                    window.vietnameseQuizData = [
-                        { question: "Xin chào", pronunciation: "シン チャオ", options: ["こんにちは", "さようなら", "ありがとう"], correct: 0, explanation: "「Xin chào」は「こんにちは」という意味です。" },
-                        // 他のデータも同様に追加
-                    ];
-                    data = window.vietnameseQuizData;
-                }
-                break;
+                return window.vietnameseQuizData;
             default:
-                data = null;
+                return null;
         }
-        
-        if (!data) {
-            console.error(`Quiz data for language '${language}' is not available.`);
-            return null;
-        }
-        
-        return data;
     }
 
     /**
@@ -310,36 +286,7 @@ class QuizApp {
     }
 }
 
-// クイズデータの読み込みを確認
-function checkQuizData() {
-    const quizData = {
-        chinese: window.chineseQuizData,
-        korean: window.koreanQuizData,
-        english: window.englishQuizData,
-        spanish: window.spanishQuizData,
-        vietnamese: window.vietnameseQuizData
-    };
-
-    // データの読み込み状態をチェック
-    const missingData = Object.entries(quizData)
-        .filter(([_, data]) => !data || data.length === 0)
-        .map(([lang]) => lang);
-
-    if (missingData.length > 0) {
-        console.error('Missing quiz data for languages:', missingData);
-        return false;
-    }
-    return true;
-}
-
 // アプリケーションの初期化
 document.addEventListener('DOMContentLoaded', () => {
-    // すべてのスクリプトが読み込まれるのを待つ
-    setTimeout(() => {
-        if (checkQuizData()) {
-            new QuizApp();
-        } else {
-            alert('クイズデータの読み込みに失敗しました。ページを更新してください。');
-        }
-    }, 1000);
+    new QuizApp();
 });
